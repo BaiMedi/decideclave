@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist para Tomar Decisiones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #00344B;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffe0b2;
+            border: 1px solid #ffcc80;
+            border-radius: 5px;
+            color: #e65100;
+            font-weight: bold;
+        }
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-container p {
+            color: #00344B;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a {
+            display: inline-block;
+            background-color: #00DC42;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cta-container a:hover {
+            background-color: #00c03a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist para Tomar Decisiones Clave a Tiempo</h1>
+        <p>¿Estás enfrentando una decisión importante? Usa esta checklist interactiva para aclarar tu mente y elegir la mejor opción.</p>
+
+        <form id="decision-form">
+            <label for="decision">Describe tu decisión:</label>
+            <input type="text" id="decision" placeholder="Ejemplo: Invertir en un curso de marketing digital">
+
+            <label for="factors">Lista los factores importantes para decidir (separa por comas):</label>
+            <input type="text" id="factors" placeholder="Ejemplo: Costo, tiempo, impacto, retorno">
+
+            <button type="button" onclick="generateChecklist()">Generar Checklist</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+
+        <div class="cta-container">
+            <p>REVOLUCIONA TU NEGOCIO CON EL PODER DEL CHAT INTELIGENTE</p>
+            <a href="https://klicana.work/tdivKK" target="_blank">SÍ, QUIERO INSCRIBIRME AHORA EN LUCRACHAT IA</a>
+        </div>
+    </div>
+
+    <script>
+        function generateChecklist() {
+            const decision = document.getElementById("decision").value.trim();
+            const factors = document.getElementById("factors").value.split(",").map(factor => factor.trim());
+
+            if (!decision || factors.length === 0) {
+                document.getElementById("result").style.display = "block";
+                document.getElementById("result").textContent = "Por favor, completa todos los campos para generar tu checklist.";
+                return;
+            }
+
+            let checklist = `<strong>Checklist para tu decisión:</strong><br>`;
+            checklist += `<strong>Decisión:</strong> ${decision}<br>`;
+            checklist += `<strong>Factores clave:</strong><ul>`;
+            factors.forEach((factor, index) => {
+                checklist += `<li>${index + 1}. ${factor}</li>`;
+            });
+            checklist += `</ul>`;
+            checklist += `<p>Consejo: Evalúa cada factor según su importancia y elige la opción que maximice tu beneficio general.</p>`;
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").innerHTML = checklist;
+        }
+    </script>
+</body>
+</html>
