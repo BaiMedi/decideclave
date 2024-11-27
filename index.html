@@ -104,10 +104,23 @@
                 checklist += `<li>${index + 1}. ${factor}</li>`;
             });
             checklist += `</ul>`;
-            checklist += `<p>Consejo: Evalúa cada factor según su importancia y elige la opción que maximice tu beneficio general.</p>`;
+
+            // Generar un consejo más extenso y específico
+            let advice = `
+                <p><strong>Consejo detallado:</strong> 
+                Para maximizar tu éxito en la toma de decisiones, sigue estos pasos específicos:</p>
+                <ol>
+                    <li><strong>Prioriza los factores:</strong> Evalúa cada factor de la lista en términos de importancia. Asigna una calificación a cada uno del 1 al 10. Esto te ayudará a identificar cuáles son los elementos críticos que más influirán en tu decisión.</li>
+                    <li><strong>Analiza las consecuencias:</strong> Considera tanto los beneficios como los riesgos de cada factor. Pregúntate: "¿Qué sucede si este factor no se cumple?" Esto te dará una visión más clara de las posibles consecuencias.</li>
+                    <li><strong>Consulta con un experto o mentor:</strong> Si es posible, consulta a alguien que haya pasado por una situación similar. Su experiencia puede brindarte perspectivas que no habías considerado.</li>
+                    <li><strong>Visualiza el escenario ideal:</strong> Imagina que todos los factores salen tal y como esperas. ¿Cómo te sentirías al haber tomado esta decisión? Esta visualización puede ayudarte a alinearte emocionalmente con la mejor opción.</li>
+                    <li><strong>Toma acción:</strong> Asegúrate de que tu decisión final te impulse a actuar. Recuerda que incluso una buena decisión sin acción no genera resultados. Define un primer paso pequeño y concreto para poner tu decisión en marcha.</li>
+                </ol>
+                <p>Finalmente, recuerda que cada decisión conlleva un aprendizaje. Aunque los resultados no siempre sean los esperados, cada paso te acercará a tu meta y te hará más fuerte. ¡Confía en tu proceso y sigue adelante!</p>
+            `;
 
             document.getElementById("result").style.display = "block";
-            document.getElementById("result").innerHTML = checklist;
+            document.getElementById("result").innerHTML = checklist + advice;
         }
     </script>
 </body>
